@@ -16,13 +16,13 @@
                 <img src="./assets/resources/img/logo.png" alt="logo" >
             </div>
             <div class="flex flex-row ml-4 space-x-4 ">
-                <a class="py-4 hover:border-b-2 hover:border-yellow-400 hover:text-yellow-400""  href="">
+                <a class="py-4 hover:border-b-2 hover:border-yellow-400 hover:text-yellow"  href="">
                     <h1>inicio</h1>
                 </a>
-                <a class="py-4 hover:border-b-2 hover:border-yellow-400 hover:text-yellow-400""  href="">
+                <a class="py-4 hover:border-b-2 hover:border-yellow-400 hover:text-yellow"  href="">
                     <h1>pesquisar</h1>
                 </a>
-                <a class="py-4 hover:border-b-2 hover:border-yellow-400 hover:text-yellow-400"s"  href="">
+                <a class="py-4 hover:border-b-2 hover:border-yellow-400 hover:text-yellow"  href="">
                     <h1>contato</h1>
                 </a>
 
@@ -30,31 +30,176 @@
         </div>
         <div class=" flex flex-row space-x-4 font-bold">
             <div class="py-4">
-                <a class="flex flex-row space-x-2 hover:text-yellow-400"" href="">
+                <a class="flex flex-row space-x-2 hover:text-yellow" href="">
                     <i class="fa-regular fa-user mt-1 "></i>
                     <h1>conectar-se</h1>
                 </a>
             </div>
             <div class="py-2">
                 <a href="">
-                   <button  class="p-2 border border-black rounded-md uppercase hover:bg-black hover:text-yellow-400"> <i class="fa-regular fa-plus"></i> adicionar carro</button>
+                   <button  class="p-2 border border-black rounded-2xl uppercase hover:bg-black hover:text-yellow"> <i class="fa-regular fa-plus"></i> adicionar carro</button>
                 </a>
             </div>
         </div>
     </header>
     <main >
-        <div class="w-full h-full bg-no-repeat bg-cover bg-fixed" style="background-image: url('./assets/resources/img/capa.jpg')">
-        <div>
+        <div class="w-full bg-no-repeat bg-cover bg-fixed" style="background-image: url('./assets/resources/img/capa.jpg')">
+            <div class="w-8/12 flex flex-col mx-auto py-20" >
+                <div class="mx-auto">
+                    <h1 class="text-white text-3xl font-semibold">Encontre o seu <span class="text-yellow">VEÍCULO</span> dos <span class="text-yellow">SONHOS</span></h1>
+                </div>
+                <div class="flex flex-row mx-auto space-x-12 mt-8 text-white">
+                    <div>
+                        <input class="hidden peer/todos" type="radio" name="estado"  id="todos" checked>
+                        <label for="todos" class="hover:cursor-pointer hover:text-yellow peer-checked/todos:text-yellow">Todos</label>
+                    </div>
+                    <div>
+                        <input class="hidden peer/novos" type="radio" name="estado" id="novos">
+                        <label for="novos" class="hover:cursor-pointer hover:text-yellow peer-checked/novos:text-yellow">Novos</label>
+                    </div>
+                    <div>
+                        <input class="hidden peer/usados" type="radio" name="estado" id="usados">
+                        <label for="usados" class="hover:cursor-pointer hover:text-yellow peer-checked/usados:text-yellow">Usados</label>
+                    </div>
+                </div>
+                <div class="flex flex-row mx-auto space-x-12 mt-8 text-white">
+                    <div>
+                        <input class="hidden peer/gasolina" type="radio" name="combustivel"  id="gasolina" checked>
+                        <label for="gasolina" class="rounded-full hover:text-yellow border-2 p-2 hover:cursor-pointer peer-checked/gasolina:text-yellow"><i class="fa-solid fa-gas-pump"></i></label>
+                    </div>
+                    <div>
+                        <input class="hidden peer/eletrico" type="radio" name="combustivel" id="eletrico">
+                        <label for="eletrico" class="rounded-full hover:text-yellow border-2 p-2 hover:cursor-pointer peer-checked/eletrico:text-yellow"><i class="fa-solid fa-bolt"></i></label>
+                    </div>
+                </div>
+                <div class="bg-white mx-auto px-10 py-5 space-x-10 rounded-2xl border-b-yellow border-b-4 mt-8">
+                    <select class="border rounded-xl py-2 px-4 text-gray" name="marcas" id="marcas">
+                        <option value="" selected disabled hidden>Todas as marcas</option>
+                    </select>
+                    <select class="border rounded-xl py-2 px-4 text-gray" name="modelos" id="modelos">
+                        <option value="" selected disabled hidden>Todas os modelos</option>
+                    </select>
+                    <select class="border rounded-xl py-2 px-4 text-gray" name="preco_max" id="preco_max">
+                        <option value="" selected disabled hidden>Preço máximo</option>
+                    </select>
+                    <button class="bg-yellow rounded-2xl py-2 px-6"><i class="text-white fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+        </div>
 
+        <div class="w-8/12 flex flex-wrap mx-auto py-10 ">
+            <div class="px-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                <div  class="bg-black">
+                    <div>
+                        <h1 class="text-white">ola mundo</h1>
+                    </div>
+                    <div>
 
+                    </div>
+                    <div>
 
+                    </div>
+                    <div>
+                        <div>
 
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="px-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                <div  class="bg-yellow">
+                    <div>
+                        <h1 class="text-white">ola mundo</h1>
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="px-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                <div  class="bg-black">
+                    <div>
+                        <h1 class="text-white">ola mundo</h1>
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="px-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                <div  class="bg-yellow">
+                    <div>
+                        <h1 class="text-white">ola mundo</h1>
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
-        </div>
+        <div class="w-full bg-yellow">
+            <div class="w-8/12 flex flex-col mx-auto py-2" >
+                <div class="mx-auto">
+                    <h1 class="uppercase font-semibold text-xl">contato</h1>
+                </div>
+                <div>
+                    <div>
+                        <div>
 
+                        </div>
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </main>
-    <footer>
+    <foote class="w-full bg-black py-2" >
 
     </footer>
 </body>

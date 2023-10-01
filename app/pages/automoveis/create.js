@@ -43,7 +43,7 @@ condicao.forEach(condicao => {
     selectCondicoes.append(option);
 });
 
-const fuel = ["Gasolina", "Diesel", "Etanol", "Eletricidade"];
+const fuel = ["Gasolina", "Eletrico"];
 const fuels = $('#fuels-car');
 fuel.forEach(fuel => {
     const option = $('<option>', {

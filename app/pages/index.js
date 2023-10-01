@@ -75,7 +75,7 @@ function preencherModelos(marcaSelecionada) {
     selectModelos.empty();
     const optionGenerica = $('<option>', {
         value: 'default',
-        text: 'Todos os modelos' // Texto da opção genérica
+        text: 'Todos os modelos'
     });
     selectModelos.append(optionGenerica);
 
@@ -99,18 +99,11 @@ preencherModelos(selectMarcas.val());
 
 const filtrarAutomoveis = (automoveis, condicaoFiltro, combustivelFiltro, marcaFiltro, modeloFiltro, precoMaximoFiltro) => {
     return automoveis.filter(carro => {
-        console.log(carro)
         const atendeCondicao = carro.condicao === condicaoFiltro || condicaoFiltro === 'todos';
         const atendeCombustivel = carro.tipo_combustivel === combustivelFiltro || combustivelFiltro === undefined;
         const atendeMarca = carro.marca === marcaFiltro || marcaFiltro === 'default';
         const atendeModelo = carro.modelo === modeloFiltro || modeloFiltro === 'default';
         const atendePreco = carro.preco <= precoMaximoFiltro || precoMaximoFiltro == '';
-        console.log(marcaFiltro)
-        console.log(modeloFiltro)
-        console.log(precoMaximoFiltro)
-        console.log(atendeMarca)
-        console.log(atendeModelo)
-        console.log(atendePreco)
         return atendeMarca && atendeModelo && atendePreco && atendeCondicao && atendeCombustivel;
     });
 }
@@ -122,7 +115,6 @@ $('#filtrar').on('click', function () {
     const modeloSelecionado = $('#modelo').val();
     const precoMaximo = $('#price').val();
     let carrosFiltrados = filtrarAutomoveis(cars, condicaoSelecioanda, combustivelSelecioanda, marcaSelecionada, modeloSelecionado, precoMaximo)
-    console.log(carrosFiltrados)
     document.getElementById('cars').innerHTML = ''
     if (carrosFiltrados.length === 0) {
         document.getElementById('cars').innerHTML = `<h1 class="w-full text-2xl text-center py-2 font-bold">Não há carros com essas caracteristicas</h1>`

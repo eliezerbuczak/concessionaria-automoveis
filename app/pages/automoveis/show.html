@@ -7,15 +7,57 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/dist/output.css" rel="stylesheet">
-    <title>Document</title>
+    <title id="title-car"></title>
 </head>
 
-<body class="w-full flex flex-col">
+<body class="w-full flex flex-col min-h-screen relative">
     <div id="header"></div>
-    <div id="footer"></div>
-    <script src="/node_modules/jquery/dist/jquery.js"></script>
-    <script type="module" src="/assets/resources/scripts/shared.js"></script>
-    <script src="/app/pages/automoveis/show.js"></script>
+    <n>
+        <div class="w-8/12 flex flex-row mx-auto py-10 mb-14">
+            <div class="w-7/12">
+                <div id="img">
+
+                </div>
+                <div>
+                    <h1 class="py-2 font-bold text-xl">Descrição</h1>
+                    <h2 id="description">
+                    </h2>
+                </div>
+            </div>
+            <div class="w-5/12 mx-10">
+                <div>
+                    <h1 id="name-car" class="text-5xl font-bold"></h1>
+                </div>
+                <div class="flex flex-row space-x-10 py-2 text-gray font-bold">
+                    <h1 id="year-car">
+                    </h1>
+                    <h1>
+                        <span id="km-car"></span> KM
+                    </h1>
+                    <h1 id="fuel-car" class="uppercase">
+                    </h1>
+                </div>
+                <div>
+                    <h1 class="text-5xl text-yellow font-bold">R$ <span id="price"></span></h1>
+                </div>
+                <div class="bg-gray mt-4 rounded p-4 text-white semi-bold">
+                    <h1 class="font-bold">Marca: <span id="brand-car" class="font-semibold"></span></h1>
+                    <h1 class="font-bold">Modelo: <span id="model-car" class="font-semibold"></span></h1>
+                    <h1 class="font-bold">Ano: <span id="year-car-desc" class="font-semibold"></span></h1>
+                    <h1 class="font-bold">Condição: <span id="condition-car" class="font-semibold"></span></h1>
+                    <h1 class="font-bold">Quilometragem: <span id="km-car-desc" class="font-semibold"></span></h1>
+                    <h1 class="font-bold">Tipo de combustivel: <span id="fuel-car-desc" class="font-semibold"></span>
+                    </h1>
+                    <h1 class="font-bold">Portas: <span id="door-car" class="font-semibold"></span></h1>
+                </div>
+            </div>
+        </div>
+        </main>
+
+        <div id="footer"></div>
+        <script src="/node_modules/jquery/dist/jquery.js"></script>
+        <script type="module" src="/assets/resources/scripts/shared.js"></script>
+        <script src="/app/pages/automoveis/show.js"></script>
 </body>
 
 </html>

@@ -8,12 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/dist/output.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/fb0b422126.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>E-car</title>
 </head>
 
-<body class="w-full flex flex-col">
+<body class="w-full flex flex-col min-h-screen relative">
     <div id="header"></div>
-    <main>
+    <main class="mb-14">
         <div class="w-full bg-no-repeat bg-cover bg-fixed"
             style="background-image: url('./assets/resources/img/capa.jpg')">
             <div class="w-8/12 flex flex-col mx-auto py-20">
@@ -23,30 +23,32 @@
                 </div>
                 <div class="flex flex-row mx-auto space-x-12 mt-8 text-white">
                     <div>
-                        <input class="hidden peer/todos" type="radio" name="estado" id="todos" checked>
+                        <input class="hidden peer/todos" type="radio" name="estado" id="todos" value="todos" checked>
                         <label for="todos"
                             class="hover:cursor-pointer hover:text-yellow peer-checked/todos:text-yellow">Todos</label>
                     </div>
                     <div>
-                        <input class="hidden peer/novos" type="radio" name="estado" id="novos">
+                        <input class="hidden peer/novos" type="radio" name="estado" value="novo" id="novos">
                         <label for="novos"
                             class="hover:cursor-pointer hover:text-yellow peer-checked/novos:text-yellow">Novos</label>
                     </div>
                     <div>
-                        <input class="hidden peer/usados" type="radio" name="estado" id="usados">
+                        <input class="hidden peer/usados" type="radio" name="estado" value="usado" id="usados">
                         <label for="usados"
                             class="hover:cursor-pointer hover:text-yellow peer-checked/usados:text-yellow">Usados</label>
                     </div>
                 </div>
                 <div class="flex flex-row mx-auto space-x-12 mt-8 text-white">
                     <div>
-                        <input class="hidden peer/gasolina" type="radio" name="combustivel" id="gasolina" checked>
+                        <input class="hidden peer/gasolina" type="radio" name="combustivel" id="gasolina"
+                            value="gasolina">
                         <label for="gasolina"
                             class="rounded-full hover:text-yellow border-2 p-2 hover:cursor-pointer peer-checked/gasolina:text-yellow"><i
                                 class="fa-solid fa-gas-pump"></i></label>
                     </div>
                     <div>
-                        <input class="hidden peer/eletrico" type="radio" name="combustivel" id="eletrico">
+                        <input class="hidden peer/eletrico" type="radio" name="combustivel" value="eletrico"
+                            id="eletrico">
                         <label for="eletrico"
                             class="rounded-full hover:text-yellow border-2 p-2 hover:cursor-pointer peer-checked/eletrico:text-yellow"><i
                                 class="fa-solid fa-bolt"></i></label>
@@ -54,22 +56,21 @@
                 </div>
                 <div class="flex flex-wrap bg-white py-5 rounded-2xl border-b-yellow border-b-4 mt-8">
                     <div class="px-2 py-2 w-full  md:w-1/3 lg:w-1/4">
-                        <select class="w-full border rounded-xl py-2 px-4 text-gray" name="marcas" id="marcas">
-                            <option value="" selected disabled hidden>Todas as marcas</option>
+                        <select class="w-full border rounded-xl py-2 px-4 text-gray" name="marcas" id="marca">
+                            <option value="default" selected>Todas as marcas</option>
                         </select>
                     </div>
                     <div class="px-2 py-2 w-full  md:w-1/3 lg:w-1/4">
-                        <select class=" w-full border rounded-xl py-2 px-4 text-gray" name="modelos" id="modelos">
-                            <option value="" selected disabled hidden>Todas os modelos</option>
+                        <select class=" w-full border rounded-xl py-2 px-4 text-gray" name="modelos" id="modelo">
+                            <option value="default" selected>Todas os modelos</option>
                         </select>
                     </div>
                     <div class="px-2 py-2 w-full  md:w-1/3 lg:w-1/4">
-                        <select class="w-full border rounded-xl py-2 px-4 text-gray" name="preco_max" id="preco_max">
-                            <option value="" selected disabled hidden>Preço máximo</option>
-                        </select>
+                        <input id="price" type="number" placeholder="Digite o preço máximo"
+                            class="w-full border border-gray rounded-xl p-2">
                     </div>
                     <div class="px-2 py-2 w-full lg:w-1/4 md:mx-auto md:w-1/2">
-                        <button class="lg:w-full w-full bg-yellow rounded-2xl py-2 px-6"><i
+                        <button id="filtrar" class="lg:w-full w-full bg-yellow rounded-2xl py-2 px-6"><i
                                 class="text-white fa-solid fa-magnifying-glass"></i></button>
                     </div>
                 </div>
@@ -78,30 +79,7 @@
 
         <div id="cars" class="w-full lg:w-8/12 flex flex-wrap mx-auto py-10">
         </div>
-        <div class="w-full bg-yellow">
-            <div class="w-8/12 flex flex-col mx-auto py-2">
-                <div class="mx-auto">
-                    <h1 class="uppercase font-semibold text-xl">contato</h1>
-                </div>
-                <div>
-                    <div>
-                        <div>
 
-                        </div>
-                        <div>
-
-                        </div>
-                        <div>
-
-                        </div>
-                    </div>
-                    <div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
     </main>
     <div id="footer">
 

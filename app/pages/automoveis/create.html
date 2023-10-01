@@ -1,13 +1,92 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link href="/dist/output.css" rel="stylesheet">
+    <title>Adicionar Carro</title>
 </head>
-<body>
 
+<body class="w-full flex flex-col min-h-screen relative">
+    <div id="header"></div>
+    <main>
+        <div class="w-8/12 flex flex-col mx-auto py-10 mb-14">
+            <div class="mb-4">
+                <h1 class="uppercase font-bold text-xl">Adicionar Automóvel</h1>
+            </div>
+            <div>
+                <div class="flex flex-row w-full">
+                    <div class="flex w-3/4 px-4 py-2">
+                        <select id="marcas-carros" class="w-full border border-gray rounded-xl p-2">
+                        </select>
+                    </div>
+                    <div class="flex w-3/4 px-4 py-2">
+                        <select id="modelos-carros" class="w-full border border-gray rounded-xl p-2">
+                        </select>
+                    </div>
+                    <div class="flex w-3/4 px-4 py-2">
+                        <select id="conditions-car" class="w-full border border-gray rounded-xl p-2">
+                        </select>
+                    </div>
+                    <div class="flex w-3/4 px-4 py-2">
+                        <select id="fuels-car" class="w-full border border-gray rounded-xl p-2">
+                        </select>
+                    </div>
+                </div>
+                <div class="flex flex-row w-full">
+                    <div class="flex w-3/4 px-4 py-2">
+                        <input id="door" type="number" placeholder="Digite o numero de portas"
+                            class="w-full border border-gray rounded-xl p-2">
+                    </div>
+                    <div class="flex w-3/4 px-4 py-2">
+                        <input id="year" type="number" placeholder="Digite o ano"
+                            class="w-full border border-gray rounded-xl p-2">
+                    </div>
+                    <div class="flex w-3/4 px-4 py-2">
+                        <input id="price" type="number" placeholder="Digite o preço"
+                            class="w-full border border-gray rounded-xl p-2">
+                    </div>
+                    <div class="flex w-3/4 px-4 py-2">
+                        <input id="km-car" type="number" placeholder="Digite a quilometragem"
+                            class="w-full border border-gray rounded-xl p-2">
+                    </div>
+                </div>
+                <div>
+                    <div class="flex flex-row">
+                        <div class="flex w-6/12 px-4 py-2">
+                            <input id="imagem-car" type="text" placeholder="Digite a URL da imagem"
+                                class="w-full border border-gray rounded-xl p-2">
+                        </div>
+                        <div class="flex w-6/12 px-4 py-2">
+                            <input id="name-car" type="text" placeholder="Digite o nome do automóvel"
+                                class="w-full border border-gray rounded-xl p-2">
+                        </div>
+                    </div>
+
+                    <div class="flex px-4 py-2">
+                        <textarea id="description" class="w-full border border-gray rounded-xl p-2 h-80"
+                            placeholder="Digite a descrição do automóvel"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="justify-between w-full flex flex-row px-4">
+                <button class="bg-black text-white rounded-2xl w-4/12 py-2">
+                    Cancelar
+                </button>
+                <button class="bg-yellow text-black rounded-2xl w-4/12 py-2" id="enviar" type="submit">
+                    Enviar
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script type="module" src="/assets/resources/scripts/shared.js"></script>
+    <script src="/app/pages/automoveis/create.js"></script>
 </body>
+
 </html>

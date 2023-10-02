@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let isLoggedIn = true
+    let isLoggedIn = false
 
     let header = isLoggedIn ? '/menu-logado.html' : '/menu.html';
     $('#header').load(header);

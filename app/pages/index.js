@@ -1,3 +1,30 @@
+'use strict';
+
+import {
+  LOGGED_IN_KEY,
+  USERNAME_KEY,
+} from  '/app/util/shared.js';
+
+function initializeUsers() {
+  if (localStorage.getItem(USERNAME_KEY) != null) {
+    return false;
+  }
+
+  var user = {
+    username: USERNAME_KEY,
+    password: 'ecar',
+  };
+
+  localStorage.setItem(USERNAME_KEY, JSON.stringify(user));
+  localStorage.setItem(LOGGED_IN_KEY, false);
+}
+window.onload = function () {
+    initializeUsers();
+};
+
+
+
+
 let cars = [];
 const baseURL = 'http://localhost:3000';
 fetch(`${baseURL}/automoveis`)

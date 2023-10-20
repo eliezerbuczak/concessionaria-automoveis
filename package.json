@@ -6,6 +6,7 @@
     "dev": "json-server --watch db.json --port 3000 | npx tailwindcss -i ./assets/resources/styles/input.css -o ./dist/output.css --watch"
   },
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "jquery": "^3.7.1",
     "json-server": "^0.17.4"
   }

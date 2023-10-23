@@ -1,26 +1,33 @@
-'use strict';
 
-import { LOGGED_IN_KEY, USERNAME_KEY } from '/app/util/shared.js';
+const baseURL = 'http://localhost:3000';
+document.addEventListener("DOMContentLoaded", function () {
+  const usernameInput = document.getElementById("username");
+  const passwordInput = document.getElementById("password");
+  const loginButton = document.getElementById("login-button");
 
-window.onload = function () {
-  //trata o login
-  document.forms[0].onsubmit = function (e) {
+  loginButton.addEventListener("click", function (e) {
     e.preventDefault();
+    const username = usernameInput.value;
+    const password = passwordInput.value;
 
-    const username = document.querySelector('#input-username').value;
-    const password = document.querySelector('#input-password').value;
+    //make a request to the server to check if the user exists and the password is correct in table user com json server
 
-    const user = JSON.parse(localStorage.getItem(USERNAME_KEY));
-
-    if (username === user.username && password === user.password) {
-      localStorage.setItem(LOGGED_IN_KEY, true);
-      window.open('/app/pages/automoveis/index.html', '_SELF');
-    } else {
-      if (username.trim().length === 0 || password.trim().length === 0) {
-        alert('Os campos são de preenchimento obrigatório!');
-      } else {
-          alert('Por favor, verifique seu nome de usuário ou senha e tente novamente!')
+    fetch(`${baseURL}/users`).then((response) => {
+      if (!response.ok) {
+        throw new Error("A resposta não está OK");
       }
-    }
-  };
-};
+      return response.json();
+    }).then(data => {
+      data.forEach(user => {
+        if (user.user === username && user.password === password) {
+          localStorage.setItem("authenticated", true);
+          window.location.href = "/app/pages/automoveis/index.html";
+        }
+      })
+    }).catch((error) => {
+      console.error("Erro:", error);
+    })
+  });
+
+
+});

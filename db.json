@@ -32,9 +32,8 @@
   "users": [
     {
       "id": 1,
-      "nome": "admin",
-      "email": "ecar",
-      "senha": "123"
+      "user": "admin",
+      "password": "admin"
     }
   ]
 }

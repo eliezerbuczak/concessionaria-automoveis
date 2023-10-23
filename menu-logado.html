@@ -26,5 +26,17 @@
                         class="fa-regular fa-plus"></i> adicionar carro</button>
             </a>
         </div>
+        <div class="py-2">
+            <button id="exit-button" onclick="sair()" class="uppercase hover:text-yellow"><i
+                    class="text-2xl fa-solid fa-power-off"></i></button>
+        </div>
     </div>
+
 </header>
+<script>
+    function sair() {
+        confirm("Deseja realmente sair?");
+        localStorage.setItem("authenticated", false);
+        window.location.href = "/index.html";
+    }
+</script>

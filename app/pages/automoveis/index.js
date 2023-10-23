@@ -1,22 +1,24 @@
 const baseURL = 'http://localhost:3000';
-fetch(`${baseURL}/automoveis`)
-    .then((response) => {
-        if (!response.ok) {
-            throw new Error('A resposta não está OK');
-        }
-        return response.json();
-    })
-    .then(data => {
-        cars = data
-        console.log(cars)
-        data.forEach(carro => {
-            listCars(carro)
-        })
-    })
-    .catch((error) => {
-        console.error('Erro:', error);
-    })
 
+window.onload = async () => {
+    await fetch(`${baseURL}/automoveis`)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('A resposta não está OK');
+            }
+            return response.json();
+        })
+        .then(data => {
+            cars = data
+            console.log(cars)
+            data.forEach(carro => {
+                listCars(carro)
+            })
+        })
+        .catch((error) => {
+            console.error('Erro:', error);
+        })
+}
 const listCars = (carro) => {
     const carsDiv = document.getElementById('cars');
     const carDiv = document.createElement('div');

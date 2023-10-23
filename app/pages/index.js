@@ -1,50 +1,32 @@
 'use strict';
 
 import {
-  LOGGED_IN_KEY,
-  USERNAME_KEY,
-} from  '/app/util/shared.js';
-
-function initializeUsers() {
-  if (localStorage.getItem(USERNAME_KEY) != null) {
-    return false;
-  }
-
-  var user = {
-    username: USERNAME_KEY,
-    password: 'ecar',
-  };
-
-  localStorage.setItem(USERNAME_KEY, JSON.stringify(user));
-  localStorage.setItem(LOGGED_IN_KEY, false);
-}
-window.onload = function () {
-    initializeUsers();
-};
-
+    LOGGED_IN_KEY,
+} from '/app/util/shared.js';
 
 
 
 let cars = [];
 const baseURL = 'http://localhost:3000';
-fetch(`${baseURL}/automoveis`)
-    .then((response) => {
-        if (!response.ok) {
-            throw new Error('A resposta não está OK');
-        }
-        return response.json();
-    })
-    .then(data => {
-        cars = data
-        console.log(cars)
-        data.forEach(carro => {
-            listCars(carro)
+window.onload = async () => {
+    await fetch(`${baseURL}/automoveis`)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('A resposta não está OK');
+            }
+            return response.json();
         })
-    })
-    .catch((error) => {
-        console.error('Erro:', error);
-    })
-
+        .then(data => {
+            cars = data
+            console.log(cars)
+            data.forEach(carro => {
+                listCars(carro)
+            })
+        })
+        .catch((error) => {
+            console.error('Erro:', error);
+        })
+}
 const listCars = (carro) => {
     const carsDiv = document.getElementById('cars');
     const carDiv = document.createElement('div');

@@ -5,8 +5,8 @@ function pegarIdDaUrl() {
     return urlParams.get('id');
 }
 
-function buscarDadosDoCarro(carroId) {
-    fetch(`${baseURL}/automoveis/${carroId}`)
+const buscarDadosDoCarro = async (carroId) => {
+    await fetch(`${baseURL}/automoveis/${carroId}`)
         .then(response => response.json())
         .then(data => {
             console.log(data);

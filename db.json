@@ -27,6 +27,48 @@
       "quilometragem_rodada": "120000",
       "imagem": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Ford_Fiesta_ST-Line_%28VII%2C_Facelift%29_%E2%80%93_f_30012023.jpg",
       "id": 11
+    },
+    {
+      "marca": "chevrolet",
+      "modelo": "cruze",
+      "nome": "corsa",
+      "ano": "2015",
+      "preco": "25000",
+      "tipo_combustivel": "gasolina",
+      "descricao": "asdasdasd",
+      "condicao": "usado",
+      "qntd_portas": "4",
+      "quilometragem_rodada": "48000",
+      "imagem": "https://turboclass.com.br/images/anuncio/tc-9etg8cq-aceita-troca-carro-chevrolet-corsa-original/IMG-20221101-WA0003.jpg",
+      "id": 12
+    },
+    {
+      "marca": "volkswagen",
+      "modelo": "golf",
+      "nome": "",
+      "ano": "",
+      "preco": "",
+      "tipo_combustivel": "gasolina",
+      "descricao": "",
+      "condicao": "novo",
+      "qntd_portas": "",
+      "quilometragem_rodada": "",
+      "imagem": "",
+      "id": 13
+    },
+    {
+      "marca": "volkswagen",
+      "modelo": "golf",
+      "nome": "",
+      "ano": "",
+      "preco": "",
+      "tipo_combustivel": "gasolina",
+      "descricao": "",
+      "condicao": "novo",
+      "qntd_portas": "",
+      "quilometragem_rodada": "",
+      "imagem": "",
+      "id": 14
     }
   ],
   "users": [

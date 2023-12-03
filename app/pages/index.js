@@ -1,9 +1,5 @@
 'use strict';
 
-import {
-    LOGGED_IN_KEY,
-} from '/app/util/shared.js';
-
 
 
 let cars = [];
@@ -18,8 +14,7 @@ window.onload = async () => {
         })
         .then(data => {
             cars = data
-            console.log(cars)
-            data.forEach(carro => {
+            cars.forEach(carro => {
                 listCars(carro)
             })
         })
@@ -64,6 +59,7 @@ const listCars = (carro) => {
 
 const marcas = ["Volkswagen", "Ford", "Chevrolet", "Toyota", "Honda"];
 const selectMarcas = $('#marca');
+
 marcas.forEach(marca => {
     const option = $('<option>', {
         value: marca.toLowerCase(),

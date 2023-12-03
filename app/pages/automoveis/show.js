@@ -29,7 +29,7 @@ window.onload = async () => {
 
 const showCar = (car) => {
     $('#img').html(`<img id="img" src="${car.imagem}" alt="">`);
-    $('#description').html(car.descricao);
+    $('.description').html(car.descricao);
     $('#name-car').html(car.nome);
     $('#year-car').html(car.ano);
     $('#km-car').html(car.quilometragem_rodada.toLocaleString('pt-BR'));

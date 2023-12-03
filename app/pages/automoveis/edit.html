@@ -8,76 +8,79 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/assets/resources/styles/input.css">
     <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Editar Automóvel</title>
 </head>
 
 <body class="w-full flex flex-col min-h-screen relative">
     <div id="header"></div>
     <main>
-        <div class="w-8/12 flex flex-col mx-auto py-10 mb-14">
-            <div class="mb-4">
+        <div class="w-full lg:w-8/12 flex flex-col mx-auto py-16 mb-14">
+            <div class="mb-4 ml-4">
                 <h1 class="uppercase font-bold text-xl">Editar Automóvel <span id="name-car-edit"></span></h1>
             </div>
-            <div>
-                <div class="flex flex-row w-full">
-                    <div class="flex w-3/4 px-4 py-2">
+                <div class="flex flex-wrap w-full">
+                    <div class="flex flex-col w-full sm:w-6/12 md:w-3/12 px-4 py-2">
+                        <h2>Marcas:</h2>
                         <select id="marcas-carros" class="w-full border border-gray rounded-xl p-2">
                         </select>
                     </div>
-                    <div class="flex w-3/4 px-4 py-2">
+                    <div class="flex flex-col w-full sm:w-6/12 md:w-3/12 px-4 py-2">
+                        <h2>Modelos:</h2>
                         <select id="modelos-carros" class="w-full border border-gray rounded-xl p-2">
                         </select>
                     </div>
-                    <div class="flex w-3/4 px-4 py-2">
+                    <div class="flex flex-col w-full sm:w-6/12 md:w-3/12 px-4 py-2">
+                        <h2>Condição:</h2>
                         <select id="conditions-car" class="w-full border border-gray rounded-xl p-2">
                         </select>
                     </div>
-                    <div class="flex w-3/4 px-4 py-2">
+                    <div class="flex flex-col w-full sm:w-6/12 md:w-3/12 px-4 py-2">
+                        <h2>Combustível:</h2>
                         <select id="fuels-car" class="w-full border border-gray rounded-xl p-2">
                         </select>
                     </div>
-                </div>
-                <div class="flex flex-row w-full">
-                    <div class="flex w-3/4 px-4 py-2">
+                    <div class="flex flex-col w-full sm:w-6/12 md:w-3/12 px-4 py-2">
+                        <h2>N° de Portas:</h2>
                         <input id="door" type="number" placeholder="Digite o numero de portas"
                             class="w-full border border-gray rounded-xl p-2">
                     </div>
-                    <div class="flex w-3/4 px-4 py-2">
+                    <div class="flex flex-col w-full sm:w-6/12 md:w-3/12 px-4 py-2">
+                        <h2>Ano:</h2>
                         <input id="year" type="number" placeholder="Digite o ano"
                             class="w-full border border-gray rounded-xl p-2">
                     </div>
-                    <div class="flex w-3/4 px-4 py-2">
+                    <div class="flex flex-col w-full sm:w-6/12 md:w-3/12 px-4 py-2">
+                        <h2>Preço:</h2>
                         <input id="price" type="number" placeholder="Digite o preço"
                             class="w-full border border-gray rounded-xl p-2">
                     </div>
-                    <div class="flex w-3/4 px-4 py-2">
+                    <div class="flex flex-col w-full sm:w-6/12 md:w-3/12 px-4 py-2">
+                        <h2>Quilometragem:</h2>
                         <input id="km-car" type="number" placeholder="Digite a quilometragem"
                             class="w-full border border-gray rounded-xl p-2">
                     </div>
-                </div>
-                <div>
-                    <div class="flex flex-row">
-                        <div class="flex w-6/12 px-4 py-2">
-                            <input id="imagem-car" type="text" placeholder="Digite a URL da imagem"
-                                class="w-full border border-gray rounded-xl p-2">
-                        </div>
-                        <div class="flex w-6/12 px-4 py-2">
-                            <input id="name-car" type="text" placeholder="Digite o nome do automóvel"
-                                class="w-full border border-gray rounded-xl p-2">
-                        </div>
+                    <div class="flex flex-col w-full md:w-6/12 px-4 py-2">
+                        <h2>URL da imagem:</h2>
+                        <input id="imagem-car" type="text" placeholder="Digite a URL da imagem"
+                               class="w-full border border-gray rounded-xl p-2">
                     </div>
-
-                    <div class="flex px-4 py-2">
+                    <div class="flex flex-col w-full md:w-6/12 px-4 py-2">
+                        <h2>Nome do automóvel:</h2>
+                        <input id="name-car" type="text" placeholder="Digite o nome do automóvel"
+                               class="w-full border border-gray rounded-xl p-2">
+                    </div>
+                    <div class="flex flex-col w-full px-4 py-2">
+                        <h2>Descrição:</h2>
                         <textarea id="description" class="w-full border border-gray rounded-xl p-2 h-80"
                             placeholder="Digite a descrição do automóvel"></textarea>
                     </div>
-                </div>
             </div>
-            <div class="justify-between w-full flex flex-row px-4">
-                <button class="bg-black text-white rounded-2xl w-4/12 py-2">
-                    Cancelar
+            <div class="justify-between w-full flex flex-col sm:space-y-0 space-y-4 sm:flex-row px-4">
+                <button class="bg-black text-white rounded-2xl w-full sm:w-4/12 py-2">
+                    <a href="/app/pages/automoveis/index.html">Cancelar</a>
                 </button>
-                <button class="bg-yellow text-black rounded-2xl w-4/12 py-2" id="enviar" type="submit">
+                <button class="bg-yellow text-black rounded-2xl w-full sm:w-4/12 py-2" id="enviar" type="submit">
                     Enviar
                 </button>
             </div>

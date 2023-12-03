@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.3.5"
   },
   "scripts": {
     "dev": "json-server --watch db.json --port 3000 | npx tailwindcss -i ./assets/resources/styles/input.css -o ./dist/output.css --watch",
@@ -9,9 +9,10 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
+    "caniuse-lite": "^1.0.30001564",
     "flowbite": "^2.0.0",
     "jquery": "^3.7.1",
     "json-server": "^0.17.4",
-    "tailwindcss": "^3.3.3"
+    "postcss": "^8.4.31"
   }
 }

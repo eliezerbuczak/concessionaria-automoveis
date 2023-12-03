@@ -31,7 +31,7 @@
     {
       "marca": "chevrolet",
       "modelo": "cruze",
-      "nome": "corsa",
+      "nome": "corsa 2.1",
       "ano": "2015",
       "preco": "25000",
       "tipo_combustivel": "gasolina",
@@ -69,6 +69,20 @@
       "quilometragem_rodada": "",
       "imagem": "",
       "id": 14
+    },
+    {
+      "marca": "volkswagen",
+      "modelo": "golf",
+      "nome": "23123",
+      "ano": "1515",
+      "preco": 5,
+      "tipo_combustivel": "gasolina",
+      "descricao": "",
+      "condicao": "novo",
+      "qntd_portas": "4",
+      "quilometragem_rodada": "84.484",
+      "imagem": "12313123",
+      "id": 15
     }
   ],
   "users": [

@@ -66,20 +66,14 @@ function validarNumber (input) {
         input.value = input.value.charAt(0)
     }
 }
+$(document).ready(function() {
+    $('#price').mask('000.000.000,00', { reverse: true });
+    $('#km-car').mask('000.000.000', { reverse: true });
+    $('#year').mask('0000');
+    $('#door').mask('0');
 
-function validarNumberPorta (input) {
-    console.log(input.value);
-    input.value = input.value.replace(/[^0-4]/g, '');
-    if(input.value.length > 1) {
-        input.value = input.value.charAt(0)
-    }
-}
-function validarNumberAno (input) {
-    input.value = input.value.replace(/[^0-9]/g, '');
-    if(input.value.length > 4) {
-        input.value = input.value.slice(0, 4)
-    }
-}
+});
+
 enviarButton.addEventListener('click', function (event) {
     event.preventDefault()
 
@@ -110,7 +104,7 @@ enviarButton.addEventListener('click', function (event) {
         modelo: document.getElementById('modelos-carros').value,
         nome: document.getElementById('name-car').value,
         ano: document.getElementById('year').value,
-        preco: document.getElementById('price').value,
+        preco: +document.getElementById('price').value.replace(/[^\d,]/g, '').replace(',', '.'),
         tipo_combustivel: document.getElementById('fuels-car').value,
         descricao: document.getElementById('description').value,
         condicao: document.getElementById('conditions-car').value,

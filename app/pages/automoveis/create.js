@@ -1,5 +1,8 @@
 const marcas = ["Volkswagen", "Ford", "Chevrolet", "Toyota", "Honda"];
 const selectMarcas = $('#marcas-carros');
+import { Car } from '../../model/Car.js';
+
+
 marcas.forEach(marca => {
     const option = $('<option>', {
         value: marca.toLowerCase(),
@@ -56,8 +59,52 @@ fuel.forEach(fuel => {
 const enviarButton = document.getElementById('enviar');
 const baseURL = 'http://localhost:3000'
 
+function validarNumber (input) {
+    console.log(input.value);
+    input.value = input.value.replace(/[^0-9]/g, '');
+    if(input.value.length > 1) {
+        input.value = input.value.charAt(0)
+    }
+}
+
+function validarNumberPorta (input) {
+    console.log(input.value);
+    input.value = input.value.replace(/[^0-4]/g, '');
+    if(input.value.length > 1) {
+        input.value = input.value.charAt(0)
+    }
+}
+function validarNumberAno (input) {
+    input.value = input.value.replace(/[^0-9]/g, '');
+    if(input.value.length > 4) {
+        input.value = input.value.slice(0, 4)
+    }
+}
 enviarButton.addEventListener('click', function (event) {
     event.preventDefault()
+
+    let inputs = document.querySelectorAll('input, select');
+    let mensagensErro = document.querySelectorAll('.mensagem-erro');
+    mensagensErro.forEach(function (mensagem) {
+        mensagem.remove();
+    });
+
+    let camposVazios = false;
+    inputs.forEach(function (element) {
+        if (element.value.trim() === '') {
+            camposVazios = true;
+            let mensagemErro = document.createElement('span');
+            mensagemErro.className = 'mensagem-erro text-red pl-2';
+            mensagemErro.textContent =  '*';
+            element.parentNode.appendChild(mensagemErro);
+        }
+    }
+    );
+
+    if (camposVazios) {
+        return;
+    }
+
     const formData = {
         marca: document.getElementById('marcas-carros').value,
         modelo: document.getElementById('modelos-carros').value,
@@ -72,9 +119,23 @@ enviarButton.addEventListener('click', function (event) {
         imagem: document.getElementById('imagem-car').value,
     };
 
+    const carInstance = new Car(
+        formData.marca,
+        formData.modelo,
+        formData.nome,
+        formData.ano,
+        formData.preco,
+        formData.tipo_combustivel,
+        formData.descricao,
+        formData.condicao,
+        formData.qntd_portas,
+        formData.quilometragem_rodada,
+        formData.imagem
+    );
+
     fetch(`${baseURL}/automoveis`, {
         method: 'POST',
-        body: JSON.stringify(formData),
+        body: JSON.stringify(carInstance),
         headers: {
             'Content-Type': 'application/json'
         }

@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
           if (user.user === username && user.password === password) {
             localStorage.setItem("authenticated", true);
             window.location.href = "/app/pages/automoveis/index.html";
+          } else {
+            alert("Usuário ou senha incorretos");
           }
         });
       })

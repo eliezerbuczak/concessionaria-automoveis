@@ -59,14 +59,14 @@ fuel.forEach(fuel => {
 const enviarButton = document.getElementById('enviar');
 const baseURL = 'http://localhost:3000'
 
-function validarNumber (input) {
+function validarNumber(input) {
     console.log(input.value);
     input.value = input.value.replace(/[^0-9]/g, '');
-    if(input.value.length > 1) {
+    if (input.value.length > 1) {
         input.value = input.value.charAt(0)
     }
 }
-$(document).ready(function() {
+$(document).ready(function () {
     $('#price').mask('000.000.000,00', { reverse: true });
     $('#km-car').mask('000.000.000', { reverse: true });
     $('#year').mask('0000');
@@ -89,7 +89,7 @@ enviarButton.addEventListener('click', function (event) {
             camposVazios = true;
             let mensagemErro = document.createElement('span');
             mensagemErro.className = 'mensagem-erro text-red pl-2';
-            mensagemErro.textContent =  '*';
+            mensagemErro.textContent = '*';
             element.parentNode.appendChild(mensagemErro);
         }
     }
@@ -134,8 +134,8 @@ enviarButton.addEventListener('click', function (event) {
             'Content-Type': 'application/json'
         }
     })
-        .then(response => response.json())
         .then(data => {
+            alert('Carro cadastrado com sucesso!');
             console.log('Resposta do servidor:', data);
         })
         .catch(error => {

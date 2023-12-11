@@ -60,18 +60,19 @@ const enviarButton = document.getElementById('enviar');
 const baseURL = 'http://localhost:3000'
 
 function validarNumber(input) {
-    console.log(input.value);
     input.value = input.value.replace(/[^0-9]/g, '');
     if (input.value.length > 1) {
-        input.value = input.value.charAt(0)
+        input.value = input.value.charAt(0);
     }
 }
+$('#door').on('input', function () {
+    validarNumber(this); // 'this' aqui se refere ao elemento que acionou o evento (no caso, o input com id 'door')
+});
+
 $(document).ready(function () {
     $('#price').mask('000.000.000,00', { reverse: true });
     $('#km-car').mask('000.000.000', { reverse: true });
     $('#year').mask('0000');
-    $('#door').mask('0');
-
 });
 
 enviarButton.addEventListener('click', function (event) {

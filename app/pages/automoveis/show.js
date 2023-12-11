@@ -9,25 +9,27 @@ const idRecebido = obterIDDaURL();
 console.log(`ID recebido: ${idRecebido}`);
 const baseURL = 'http://localhost:3000';
 
-fetch(`${baseURL}/automoveis/${idRecebido}`)
-    .then((response) => {
-        if (!response.ok) {
-            throw new Error('A resposta não está OK');
-        }
-        return response.json();
-    })
-    .then((objeto) => {
-        $('#title-car').html(objeto.nome);
-        showCar(objeto)
-        console.log('Objeto encontrado:', objeto);
-    })
-    .catch((error) => {
-        console.error('Erro:', error);
-    });
+window.onload = async () => {
+    await fetch(`${baseURL}/automoveis/${idRecebido}`)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('A resposta não está OK');
+            }
+            return response.json();
+        })
+        .then((objeto) => {
+            $('#title-car').html(objeto.nome);
+            showCar(objeto)
+            console.log('Objeto encontrado:', objeto);
+        })
+        .catch((error) => {
+            console.error('Erro:', error);
+        });
+}
 
 const showCar = (car) => {
     $('#img').html(`<img id="img" src="${car.imagem}" alt="">`);
-    $('#description').html(car.descricao);
+    $('.description').html(car.descricao);
     $('#name-car').html(car.nome);
     $('#year-car').html(car.ano);
     $('#km-car').html(car.quilometragem_rodada.toLocaleString('pt-BR'));
